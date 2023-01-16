@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <title>교육용</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class = "alert-box" id="alert">
+    <p class = "innerText">알림창이다</p> 
+    <button onclick="closeAlert('none')">
+        닫기
+    </button>
+        
+    </div>
+    <button id="button1" onclick="active('아이디 입력')">
+        눌러봐1
+    </button>
+    <button id="button2" onclick="active('비번 입력')">
+        눌러봐2
+    </button>
+
+
+    <script>
+        function closeAlert(){
+            document.getElementById('alert').style.display = 'none';
+        }
+        function active(active){
+            document.getElementById('alert').style.display = 'block';
+            document.getElementsByClassName('innerText').innerHTML = active;
+        }
+    </script>
+
+</body>
+</html> 
