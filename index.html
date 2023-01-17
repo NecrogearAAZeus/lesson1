@@ -5,30 +5,44 @@
     <meta charset="utf-8">
     <title>교육용</title>
     <link rel="stylesheet" href="main.css">
+    
 </head>
 <body>
     <div class = "alert-box" id="alert">
     <p class = "innerText">알림창이다</p> 
-    <button onclick="closeAlert('none')">
+    <button class = "alertClose">
         닫기
     </button>
         
     </div>
-    <button id="button1" onclick="active('아이디 입력')">
+    <button id="button1" onclick="active()">
         눌러봐1
     </button>
-    <button id="button2" onclick="active('비번 입력')">
+    <button id="button2" onclick="active2()">
         눌러봐2
     </button>
 
 
     <script>
+        document.getElementsByClassName('alertClose')[0].addEventListener('click',function(){
+            document.getElementById('alert').style.display = 'none';
+        });
         function closeAlert(){
             document.getElementById('alert').style.display = 'none';
         }
-        function active(active){
+        function active(){
+           
+            document.getElementsByClassName('innerText')[0].innerHTML = '아이디 입력하셈';
             document.getElementById('alert').style.display = 'block';
-            document.getElementsByClassName('innerText').innerHTML = active;
+            document.getElementById('alert').style.color = 'black';
+            
+        }
+
+        function active2(){
+            
+            document.getElementsByClassName('innerText')[0].innerHTML = '비번 입력하셈';
+            document.getElementById('alert').style.display = 'block';
+            
         }
     </script>
 
