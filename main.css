@@ -13,15 +13,25 @@
 }
 .black-bg {
     width : 100%;
-    height : 100%;
     position : fixed;
     background : rgba(0,0,0,0.5);
     z-index : 5;
     padding: 30px;
-    display:none;
+    visibility: hidden;
+    opacity:0;
+    top:0;
+    left:0;
+    transition: all 1s;
+    overflow:hidden;
+    height:0px;
   }
   .white-bg {
     background: white;
     border-radius: 5px;
     padding: 30px;
+  }
+  .show-model{
+    visibility: visible;
+    opacity:1;
+    height:100%;
   } 

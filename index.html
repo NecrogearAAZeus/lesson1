@@ -5,9 +5,17 @@
     <meta charset="utf-8">
     <title>교육용</title>
     <link rel="stylesheet" href="main.css">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
 </head>
 <body>
+    <script
+    src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+    crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
     <div class = "alert-box" id="alert">
     <p class = "innerText">알림창이다</p> 
     <button class = "alertClose">
@@ -21,22 +29,42 @@
     <button id="button2" onclick="active2()">
         눌러봐2
     </button>
-
+    <button class="login">
+        로그인
+    </button>
+    <div class="black-bg">
+        <div class="white-bg">
+          <h4>로그인하세요</h4>
+          <button class="btn btn-danger" id="close">닫기</button>
+          <form action="success.html">
+            <div class="my-3">
+              <input type="text" class="form-control email">
+             </div>
+             <div class="my-3">
+               <input type="password" class="form-control password">
+             </div>
+             <button type="submit" class="btn btn-primary">전송</button>
+             <button type="button" class="btn btn-danger" id="close">닫기</button>
+          </form> 
+        </div>
+      </div> 
 
     <script>
         document.getElementsByClassName('alertClose')[0].addEventListener('click',function(){
             document.getElementById('alert').style.display = 'none';
+            
         });
         function closeAlert(){
             document.getElementById('alert').style.display = 'none';
-        }
+           
+        };
         function active(){
            
             document.getElementsByClassName('innerText')[0].innerHTML = '아이디 입력하셈';
             document.getElementById('alert').style.display = 'block';
             document.getElementById('alert').style.color = 'black';
             
-        }
+        };
 
         function active2(){
             
@@ -44,7 +72,33 @@
             document.getElementById('alert').style.display = 'block';
             
         }
+       
     </script>
+    <script>
+        $('.login').on('click',function(){
+            $('.black-bg').addClass("show-model");
+        })
+        $('.btn').on('click',function(){
+            $('.black-bg').removeClass("show-model");
+        })
 
+    </script>
+    <script>
+            var lentgh = $('.password').length;
+            $('.btn-primary').on('click',function(){
+                if($('.email').val() == ''){    
+                    alert('아이디가 비어있어 바보야');
+                }
+            });   
+
+            $('.btn-primary').on('click',function(){
+                if($('.password').val() == ''){    
+                    alert('비번이 비어있어 바보야');
+                }else if($('.password').length <= 6){    
+                    alert('비번이 짧아');
+                }
+            });  
+    
+    </script>
 </body>
 </html> 
