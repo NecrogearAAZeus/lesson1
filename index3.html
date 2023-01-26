@@ -17,6 +17,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <div class="bg"></div>
     <span class="badge bg-dark">Dark 🔄</span>
+    <button  type ="button" id="계산기">복리 계산기</button>
+    <input type="text" id="input1">
+    <!-- 문제 5 -->
+    <p>태조 이성계가 태어난 년도는?</p>
+    <input type="text" id="answer">
+    <button id="send-answer">제출</button>
     <style>
         .badge{
             cursor:pointer;
@@ -33,10 +39,29 @@
             left:0;
             background-color: white;
         }
+        #계산기{
+            position:relative;
+            z-index: 2;
+        }
+        #input1{
+            position:relative;
+            z-index: 2;
+        }
+        #answer{
+            position:relative;
+            z-index: 2;
+        }
+        #send-answer{
+            position:relative;
+            z-index: 2;
+        }
     </style>
 
     <script>
-       var count = 0;
+    $(document).ready(function(){
+
+        var count = 0;
+ 
        $('.badge').click(function(){
             count = count + 1;
             if(count % 2 == 0){
@@ -50,12 +75,51 @@
                 $('.bg').css('background-color','black');
                 $('.badge').removeClass('bg-dark');
                 $('.badge').addClass('bg-light');
-                $('.badge').css('color','black');
+                $('.badge').css('color','black');  
             }
 
           console.log(count);
        });
+
+
         
+        $('#계산기').click(function(){
+        
+            var 예금액 = $("#input1").val();
+        
+            var 미래예금액 = 0;
+            
+            if(예금액 < 50000){
+              예금액 = 예금액*1.15;
+              $('#input1').val(예금액);
+            }else{
+                예금액 = 예금액*1.2;
+              $('#input1').val(예금액);
+            }
+            console.log(미래예금액);
+            console.log(예금액);
+        });
+        
+
+        // 문제 4
+        var first = 260;
+        var 커피총량 = first + (first/3*2) + (first/9*4)
+        console.log(커피총량);
+        // 문제 5
+        var answerNum = 0;
+        $('#send-answer').click(function(){
+            
+            var answer = $('#answer').val()
+            if(answer == 1335){
+                alert('성공');
+            }else{ answerNum++}
+            if(answerNum > 3){
+                alert('실패');
+            }
+            console.log(answer);
+            console.log(answerNum);
+        });
+    });
     </script>
 </body>
 </html> 
