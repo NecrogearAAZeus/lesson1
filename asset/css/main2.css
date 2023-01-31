@@ -1,0 +1,14 @@
+
+body{
+    background-color: black;
+}
+.navbar{
+    position: fixed;
+    width:100%;
+    z-index: 1;
+}
+.test{
+    background-color: aqua;
+    border:1px solid red;
+    width:90%;
+}
