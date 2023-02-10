@@ -80,6 +80,16 @@
         $('.btn').on('click',function(){
             $('.black-bg').removeClass("show-model");
         })
+        
+        $('.black-bg').click(function(e){
+            var blackBg = $('.black-bg');
+            console.log(e.target);
+            console.log(blackBg);
+            if($(e.target).is($('.black-bg')) ){
+                $('.black-bg').removeClass("show-model");
+                }
+            
+        });
 
     </script>
     <script>
